@@ -1,0 +1,136 @@
+@media screen {
+    body {
+      font-family: 'Rubik', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+    
+    h1 {
+      color: #fffdd0;
+      font-size: 40px;
+      margin: 0;
+    }
+    
+    h2 {
+      margin: 0;
+      color: #fffdd0;
+    }
+    
+    h3 {
+      font-family: 'Rubik-Light', sans-serif;
+      color: #fffdd0;
+      margin: 5px;
+    }
+    
+    h4 {
+      color: #fffdd0;
+    }
+    
+    p {
+      color: #fffdd0;
+      margin: 0;
+    }
+    
+    ul {
+      list-style: none;
+      text-decoration: none;
+    }
+    
+    
+    #navbar {
+      background-color: #13095e;
+      width: 100%;
+      height: 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #top-ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .top-nav {
+      text-decoration: none;
+      color: #fffdd0;
+      text-decoration: none;
+      padding: 10px 25px;
+      font-size: 24px;
+    }
+    
+    .top-nav:hover {
+      background-color: #2311A8;
+    }
+    
+    #welcome-section {
+      background-color: #161940;
+      height: 100vh;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #projects {
+      background-color: #3E3F40;
+      height: 500px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    
+    .project-tile {
+      height: 300px;
+      width: 300px;
+      text-align: center;
+      text-decoration: none;
+    }
+    
+    .project-image {
+      height: 300px;
+      width: 300px;
+    }
+    
+    .project-caption {
+      background-color: #161940;
+      padding: 10px;
+    }
+    
+    .project-caption:hover {
+      background-color: #fffdd0;
+      color: #161940;
+    }
+    
+    #contact {
+      padding: 0;
+      margin: 0;
+      background-color: #161940;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    #profile-link {
+      width: max-content;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    #profile-link:hover {
+      background-color: #2311A8;
+    }
+    
+    footer {
+      background-color: #13095e;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
