@@ -105,7 +105,7 @@
     }
     
     #contact {
-      padding: 0;
+      padding: 10px;
       margin: 0;
       background-color: #161940;
       height: 300px;
@@ -118,7 +118,7 @@
     
     #profile-link {
       width: max-content;
-      padding: 10px;
+      padding: 20px;
       text-decoration: none;
     }
 
