@@ -75,7 +75,7 @@
     }
     
     #projects {
-      background-color: #3E3F40;
+      background-color: #808080;
       height: 500px;
       display: flex;
       justify-content: space-evenly;
@@ -132,5 +132,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+
+
+    #sw_body {
+      background-color: #d3d3d3;
+
     }
 }
