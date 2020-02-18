@@ -133,4 +133,24 @@
       justify-content: center;
       align-items: center;
     }
+
+    #swHead {
+      background-color: #2311A8;
+      height: 150px;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #swBody {
+      background-color: #808080;
+      color: #161940;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px;
+    }
+
 }
