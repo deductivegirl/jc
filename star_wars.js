@@ -8,3 +8,4 @@ const { name: planet_name, rotation_period: planet_rotation, orbital_period: pla
 const { name: species_name, classification: species_classification, designation: species_designation, average_height: species_height, 
     skin_colors: species_skin, hair_colors: species_hair, eye_colors: species_eye, average_lifespan: species_life, homeworld: species_world,
     language: species_language, people: species_people, films: species_films, url: species_url } = species;
+
