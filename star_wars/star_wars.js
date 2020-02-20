@@ -1,9 +1,11 @@
-import { planets } from './planets.js'
-import { species } from './species.js'
+import { planets } from 'planets.js'
+import { species } from 'species.js'
+
+
 
 let getPlanet = () => { 
     const { 
-        name: planet_name, 
+        name: planet_name = document.querySelector("head"), 
         rotation_period: planet_rotation, 
         orbital_period: planet_orbit, 
         diameter: planet_diameter, 
