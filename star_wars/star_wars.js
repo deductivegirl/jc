@@ -1,5 +1,5 @@
-import { planets } from './star_wars/planets.js'
-import { species } from './star_wars/species.js'
+import { planets } from './planets.js'
+import { species } from './species.js'
 
 let getPlanet = () => { 
     const { 
