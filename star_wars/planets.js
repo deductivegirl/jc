@@ -1,6 +1,5 @@
 export const planets = [
     {
-        // "image": "./star_wars/swImages/alderaan.png",
         "name": "Alderaan",
         "rotation_period": "24",
         "orbital_period": "364",
