@@ -429,6 +429,33 @@ export const people = [
         "edited": "2014-12-20T21:17:50.338000Z",
         "url": "https://swapi.co/api/people/16/"
     },
+    /*{
+        "name": "Ahsoka Tano",
+        "height": "1.88 meters",
+        "mass": "54",
+        "hair-color": "no hair",
+        "skin-color": "orange with blue and white stripes",
+        "eye-color": "blue",
+        "birth-year": "36BBY",
+        "gender": "female",
+        "homeworld": "https://swapi.co/api/planets/58/",
+        "films": [
+            "none",
+        ],
+        "species": [
+            "https://swapi.co/api/species/35/",
+        ],
+        "vehicles":[],
+        "starships":[
+            "Delta-7B Aethersprite-class light interceptor",
+            "T-6 Shuttle",
+            "https://swapi.co/api/starships/28/",
+            "https://swapi.co/api/starships/65/",
+        ],
+        "created": "2020-2-27",
+        "edited": "2020-2-27",
+        "url": "https://swapi.co/api/people/17"
+    },*/
     {
         "name": "Wedge Antilles",
         "height": "170",

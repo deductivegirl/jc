@@ -285,7 +285,8 @@ export const starships = [
         "MGLT": "120",
         "starship_class": "Starfighter",
         "pilots": [
-            "https://swapi.co/api/people/29/"
+            "https://swapi.co/api/people/29/",
+            "https://swapi.co/api/people/17/",
         ],
         "films": [
             "https://swapi.co/api/films/3/"
