@@ -1,37 +1,25 @@
+import { films } from './films.js'
+import { people } from './people.js'
 import { planets } from './planets.js'
 import { species } from './species.js'
+import { starships } from './starships.js'
+import { vehicles } from './vehicles.js'
 
-let getPlanet = () => { 
-    const { 
-        name: planet_name, 
-        rotation_period: planet_rotation, 
-        orbital_period: planet_orbit, 
-        diameter: planet_diameter, 
-        climate: planet_climate, 
-        gravity: planet_gravity, 
-        terrain: planet_terrain, 
-        surface_water: planet_water, 
-        population: planet_population, 
-        residents: planet_residents, 
-        films: planet_films, 
-        url: planet_url 
-    } = planets
-}
+let peopleName = document.querySelector('#pName')
+peopleName.textContent = people[0].name
 
-let getSpecies = () => {
-    const { 
-        name: species_name, 
-        classification: species_classification, 
-        designation: species_designation, 
-        average_height: species_height, 
-        skin_colors: species_skin, 
-        hair_colors: species_hair, 
-        eye_colors: species_eye, 
-        average_lifespan: species_life, 
-        homeworld: species_world,
-        language: species_language, 
-        people: species_character, 
-        films: species_films, 
-        url: species_url 
-    } = species
-}
+let counter = 1
+
+let castList = document.createElement("ul")
+people.forEach(person => {
+   let castItem = document.createElement("li")
+   castItem.textContent = person.name
+   castList.appendChild(castItem)
+
+   let personImg = document.createElement("img")
+   personImg.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
+   peopleName.appendChild(personImg)
+   counter++
+})
+
+peopleName.appendChild(castList)
