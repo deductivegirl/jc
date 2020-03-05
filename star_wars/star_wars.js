@@ -5,22 +5,20 @@ import { species } from './species.js'
 import { starships } from './starships.js'
 import { vehicles } from './vehicles.js'
 
-
 // People
 let gallery = document.querySelector('#gallery')
-
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
 const otherCharacters = people.filter(person => 
-   person.gender === 'n/a',
-   person.gender === 'none',
+   person.gender === 'n/a' ||
+   person.gender === 'none' ||
    person.gender === 'hermaphrodite',
    )
 
 let maleButton = document.querySelector('#maleButton')
 let femaleButton = document.querySelector('#femaleButton')
-let otherButton = document.querySelector('otherButton')
+let otherButton = document.querySelector('#otherButton')
 
 maleButton.addEventListener('click', function(event) { populateDOM(maleCharacters) })
 femaleButton.addEventListener('click', function(event) { populateDOM(femaleCharacters) })
