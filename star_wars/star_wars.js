@@ -7,41 +7,67 @@ import { vehicles } from './vehicles.js'
 
 
 // People
-let peopleName = document.querySelector('#pName')
+let gallery = document.querySelector('#gallery')
 
-let counter = 1
 
-let castList = document.createElement("ul")
-people.forEach(person => {
-   /*let castItem = document.createElement("li")
-   castItem.textContent = person.name
-   castList.appendChild(castItem)*/
+const maleCharacters = people.filter(person => person.gender === 'male')
+const femaleCharacters = people.filter(person => person.gender === 'female')
+const otherCharacters = people.filter(person => 
+   person.gender === 'n/a',
+   person.gender === 'none',
+   person.gender === 'hermaphrodite',
+   )
 
-   let personAnchor = document.createElement("a")
-   personAnchor.href = "#"
+let maleButton = document.querySelector('#maleButton')
+let femaleButton = document.querySelector('#femaleButton')
+let otherButton = document.querySelector('otherButton')
 
-   let personImg = document.createElement("img")
-   personImg.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
+maleButton.addEventListener('click', function(event) { populateDOM(maleCharacters) })
+femaleButton.addEventListener('click', function(event) { populateDOM(femaleCharacters) })
+otherButton.addEventListener('click', function(event) { populateDOM(otherCharacters) })
 
-   personImg.addEventListener('error', (event) => {
-      //Placeholder Image
-      //personImg.src = '../images/starwarspic.jpg'
-      personImg.hidden = true
-   })
-   
-   personAnchor.appendChild(personImg)
-   peopleName.appendChild(personAnchor)
-   counter++
 
-   personImg.addEventListener("click", (event) => {
+function getEndNumber(url) {
+   let end = url.lastIndexOf('/')
+   let start = end - 2
+
+   if (url.charAt(start) === '/') 
+      start++
+
+   return url.slice(start, end)
+}
+
+function removeChildren (element) {
+   while (element.firstChild) {
+      element.removeChild(element.firstChild)
+   }
+}
+
+function populateDOM (characters) {
+   removeChildren(gallery)
+
+   characters.forEach(person => {
+      let imageNumber = getEndNumber(person.url)
+      let personAnchor = document.createElement("a")
+      personAnchor.href = "#"
+
+      let personImg = document.createElement("img")
+      personImg.src = `https://starwars-visualguide.com/assets/img/characters/${imageNumber}.jpg`
+
+      personImg.addEventListener('error', (event) => {
+         //Placeholder Image
+         //personImg.src = '../images/starwarspic.jpg'
+         personImg.hidden = true
+      })
+      personImg.addEventListener("click", (event) => {
          let personHead = document.createElement("h3")
          personHead.textContent = person.name
-         peopleName.appendChild(personHead)
+         gallery.appendChild(personHead)
+      })
+
+      personAnchor.appendChild(personImg)
+      gallery.appendChild(personAnchor)
    })
-})
+}
 
-
-
-
-//Lists names of people
-//peopleName.appendChild(castList)
+populateDOM(people)
