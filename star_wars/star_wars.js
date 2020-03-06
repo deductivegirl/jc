@@ -41,6 +41,7 @@ function removeChildren (element) {
    }
 }
 
+
 function populateDOM (characters) {
    removeChildren(gallery)
 
