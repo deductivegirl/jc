@@ -32,10 +32,10 @@ function populateNav(starships) {
 // Creates ship name to display
 function populateShipView(shipData) {
     removeChildren(shipView)
-    let imageNum = getEndNumber(shipData.url)
+    let imageNumber = getEndNumber(shipData.url)
     let shipImage = document.createElement('img')
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${imageNumber}.jpg`
-    shipView.appendChild(shipTitle)
+    shipView.appendChild(shipImage)
 }
 
 populateNav(starships)
