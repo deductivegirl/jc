@@ -1,8 +1,8 @@
 import { films } from './films.js'
 import { people } from './people.js'
 import { planets } from './planets.js'
+import { removeChildren, getEndNumber } from '../utils.js'
 import { species } from './species.js'
-import { starships } from './starships.js'
 import { vehicles } from './vehicles.js'
 
 // People
@@ -24,23 +24,7 @@ maleButton.addEventListener('click', function(event) { populateDOM(maleCharacter
 femaleButton.addEventListener('click', function(event) { populateDOM(femaleCharacters) })
 otherButton.addEventListener('click', function(event) { populateDOM(otherCharacters) })
 
-
-function getEndNumber(url) {
-   let end = url.lastIndexOf('/')
-   let start = end - 2
-
-   if (url.charAt(start) === '/') 
-      start++
-
-   return url.slice(start, end)
 }
-
-function removeChildren (element) {
-   while (element.firstChild) {
-      element.removeChild(element.firstChild)
-   }
-}
-
 
 function populateDOM (characters) {
    removeChildren(gallery)
