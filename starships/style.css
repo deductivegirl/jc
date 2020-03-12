@@ -26,10 +26,12 @@ li {
 header {
     background-color: #2311a8;
     height: 80px;
-    
+    display: flex;
+    justify-content: center;
 }
 
 #navMain {
+    margin: 1rem;
     display: flex;
 }
 

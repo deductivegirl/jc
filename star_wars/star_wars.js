@@ -24,7 +24,7 @@ maleButton.addEventListener('click', function(event) { populateDOM(maleCharacter
 femaleButton.addEventListener('click', function(event) { populateDOM(femaleCharacters) })
 otherButton.addEventListener('click', function(event) { populateDOM(otherCharacters) })
 
-}
+
 
 function populateDOM (characters) {
    removeChildren(gallery)

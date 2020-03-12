@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starships</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
     <header>
-        <h1>Star Wars Starships</h1>
+      <h1>Star Wars Starships</h1>
     </header>
 
+    <!-- modal from bulma.io -->
+    <div class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-content">
+              <h2 class="dialogMessage is-size-5"></h2>
+          </div>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
     <div id="navMain">
-        <nav class="starshipNav">
-            <ul class="starshipNavList">
+      <nav class="starshipNav">
+        <ul class="starshipNavList"></ul>
+      </nav>
 
-            </ul>
-        </nav>
-
-        <main id="starshipMain">
-
-        </main>
+      <main id="starshipMain"></main>
     </div>
 
     <footer>
-        <h4>DGM 1600 | 2020 &copy Jessica Craig</h4>
+      <h4>DGM 1600 | 2020 &copy Jessica Craig</h4>
     </footer>
 
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>
