@@ -38,7 +38,7 @@ function populateDOM (characters) {
       personImg.src = `https://starwars-visualguide.com/assets/img/characters/${imageNumber}.jpg`
 
       personImg.addEventListener('error', (event) => {
-         //Placeholder Image
+         //Placeholder Image code below
          //personImg.src = '../images/starwarspic.jpg'
          personImg.hidden = true
       })
