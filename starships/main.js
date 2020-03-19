@@ -2,7 +2,6 @@ import { starships } from '../star_wars/starships.js'
 import { removeChildren, getEndNumber } from '../utils.js'
 
 const nav = document.querySelector('.starshipNav')
-
 const navList = document.querySelector('.starshipNavList')
 
 const shipView = document.querySelector('#starshipMain')
@@ -20,6 +19,7 @@ modalBackground.addEventListener('click', () => {
     modalDialog.classList.toggle("is-active")
 })
 
+// clickable list of starship names
 function populateNav(starships) {
     starships.forEach(starship => {
         let shipAnchor = document.createElement('a')
@@ -44,16 +44,17 @@ function populateNav(starships) {
 // Creates ship name to display
 function populateShipView(shipData) {
     removeChildren(shipView)
+    // gets ship image from url
     let imageNumber = getEndNumber(shipData.url)
     let shipImage = document.createElement('img')
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${imageNumber}.jpg`
     
+    // Error images
     shipImage.addEventListener('error', (event) => {
         shipImage.hidden = true
         modalDialog.classList.toggle("is-active")
-        modalMessage.textContent = `Sorry, image ${shipData} is unavaliable.`
+        modalMessage.textContent = `Sorry, image of ${shipData.name} is unavaliable.`
      })
-
     shipView.appendChild(shipImage)
 }
 

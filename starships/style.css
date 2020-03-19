@@ -26,6 +26,7 @@ li {
 header {
     background-color: #2311a8;
     height: 80px;
+    padding: .8rem;
     display: flex;
     justify-content: center;
 }
