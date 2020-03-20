@@ -42,11 +42,12 @@ function populateDOM (characters) {
          //personImg.src = '../images/starwarspic.jpg'
          personImg.hidden = true
       })
-      personImg.addEventListener("click", (event) => {
+      //creates character name
+      /*personImg.addEventListener("click", (event) => {
          let personHead = document.createElement("h3")
          personHead.textContent = person.name
          gallery.appendChild(personHead)
-      })
+      })*/
 
       personAnchor.appendChild(personImg)
       gallery.appendChild(personAnchor)
