@@ -1,9 +1,9 @@
-import { films } from './films.js'
-import { people } from './people.js'
-import { planets } from './planets.js'
+// import { films } from './films.js'
+// import { planets } from './planets.js'
+// import { species } from './species.js'
+// import { vehicles } from './vehicles.js'
 import { removeChildren, getEndNumber } from '../utils.js'
-import { species } from './species.js'
-import { vehicles } from './vehicles.js'
+import { people } from './people.js'
 
 // People
 let gallery = document.querySelector('#gallery')
