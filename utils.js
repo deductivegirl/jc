@@ -13,3 +13,7 @@ export function getEndNumber(url) {
  
     return url.slice(start, end)
 }
+
+export function addStarfield(element, numStar) {
+    element.style.setProperty('background-color', 'black')
+}
