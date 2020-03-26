@@ -15,12 +15,12 @@ export function getEndNumber(url) {
 }
 
 export function addStarfield(element, numStar) {
-    element.style.setProperty('background-color', 'black')
+    element.style.setProperty('background-color', '#353535')
     for (let i = 0; i < numStar; i++) {
         let star = document.createElement('div')
         star.style.setProperty('position', 'absolute')
-        star.style.setProperty('width', '1px')
-        star.style.setProperty('height', '1px')
+        star.style.setProperty('width', '2px')
+        star.style.setProperty('height', '2px')
         star.style.setProperty('background-color', 'white')
         let xy = getRandomPosition()
         star.style.left = `${xy[0]}px`
@@ -28,7 +28,7 @@ export function addStarfield(element, numStar) {
         element.appendChild(star)
     }
 }
-
+//change z index so that it's behind the rest of the items
 function getRandomPosition() {
     let x = document.body.scrollHeight
     let y = document.body.scrollWidth

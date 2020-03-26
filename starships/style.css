@@ -24,7 +24,7 @@ li {
 }
 
 header {
-    background-color: #2311a8;
+    background-color: #353535;
     height: 80px;
     padding: .8rem;
     display: flex;
@@ -42,7 +42,7 @@ header {
 }
 
 footer {
-    background-color: #13095e;
+    background-color: #353535;
     color: #fffdd0;
     height: 50px;
     display: flex;
