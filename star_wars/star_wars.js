@@ -2,7 +2,7 @@
 // import { planets } from './planets.js'
 // import { species } from './species.js'
 // import { vehicles } from './vehicles.js'
-import { removeChildren, getEndNumber, addStarfield } from '../utils.js'
+import { removeChildren, getEndNumber } from '../utils.js'
 import { people } from './people.js'
 
 // People
@@ -54,5 +54,3 @@ function populateDOM (characters) {
    })
 }
 populateDOM(people)
-
-addStarfield(document.body)

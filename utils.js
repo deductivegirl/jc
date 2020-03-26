@@ -19,11 +19,12 @@ export function addStarfield(element, numStar) {
     for (let i = 0; i < numStar; i++) {
         let star = document.createElement('div')
         star.style.setProperty('position', 'absolute')
-        star.style.setProperty('width', '5px')
-        star.style.setProperty('height', '5px')
+        star.style.setProperty('width', '1px')
+        star.style.setProperty('height', '1px')
         star.style.setProperty('background-color', 'white')
-        star.style.left = '100px'
-        star.style.top = '100px'
+        let xy = getRandomPosition()
+        star.style.left = `${xy[0]}px`
+        star.style.top = `${xy[1]}px`
         element.appendChild(star)
     }
 }
@@ -32,4 +33,6 @@ function getRandomPosition() {
     let x = document.body.scrollHeight
     let y = document.body.scrollWidth
     let randomY = Math.floor(Math.random() * y)
+    let randomX = Math.floor(Math.random() * x)
+    return [randomX, randomY]
 }

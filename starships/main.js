@@ -1,5 +1,5 @@
 import { starships } from '../star_wars/starships.js'
-import { removeChildren, getEndNumber } from '../utils.js'
+import { removeChildren, getEndNumber, addStarfield } from '../utils.js'
 
 const nav = document.querySelector('.starshipNav')
 const navList = document.querySelector('.starshipNavList')
@@ -59,3 +59,5 @@ function populateShipView(shipData) {
 }
 
 populateNav(starships)
+
+addStarfield(document.body)
