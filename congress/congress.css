@@ -38,6 +38,16 @@
   ul {
     list-style: none;
   }
+
+  
+  header {
+    background-color: #2311a8;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
   footer {
     background-color: #13095e;
