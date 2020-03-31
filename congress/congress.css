@@ -1,0 +1,49 @@
+:root {
+    box-sizing: border-box;
+    background-color: #808080;
+  }
+  
+  body {
+    font-family: "Rubik", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1 {
+    color: #fffdd0;
+    font-size: 40px;
+    margin: 0;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #fffdd0;
+  }
+  
+  h3 {
+    font-family: "Rubik-Light", sans-serif;
+    color: #fffdd0;
+    margin: 0;
+  }
+  
+  h4 {
+    color: #fffdd0;
+  }
+  
+  p {
+    color: #fffdd0;
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  footer {
+    background-color: #13095e;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
