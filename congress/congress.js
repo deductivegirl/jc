@@ -1,5 +1,5 @@
-import { senators } from '../congress/senators.js'
-import { representatives } from '../congress/representatives.js'
+import { senators } from './senators.js'
+import { representatives } from './representatives.js'
 
 const container = document.querySelector('.container')
 
