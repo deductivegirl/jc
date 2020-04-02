@@ -1,11 +1,13 @@
 import { senators } from './senators.js'
-import { representatives } from './representatives.js'
+//import { representatives } from './representatives.js'
 
 const container = document.querySelector('.container')
 
-const filterSenators = (prop, value => {
+//filter, map, reduce
+
+const filterSenators = (prop, value) => {
     return senators.filter(senator => senator[prop] === value)
-})
+}
 
 const mappedSenators = senators.map(senator => {
     let middleName = senator.middle_name ? ` ${senator.middle_name}` : ` `
