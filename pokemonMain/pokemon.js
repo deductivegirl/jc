@@ -14,20 +14,25 @@ getPokedata('https://pokeapi.co/api/v2/pokemon')
 
 function populatePokecards(pokemonArray) {
     pokemonArray.forEach((pokemon) => {
-        let card = document.createElement('div')
-        card.className = 'card'
-        let cardContent = document.createElement('div')
-        cardContent.className = 'content'
-        let cardFront = document.createElement('div')
-        cardFront.className = 'front'
-        cardFront.textContent = 'Front'
-        let cardBack = document.createElement('div')
-        cardBack.className = 'back'
-        cardBack.textContent = 'Back'
+        let pokeScene = document.createElement('div')
+        pokeScene.className = 'scene'
+        let pokeCard = document.createElement('div')
+        pokeCard.className = 'card'
+        pokeCard.addEventListener('click', function() {
+            pokeCard.classList.toggle('is-flipped')
+        })
 
-        cardContent.appendChild(cardFront)
-        cardContent.appendChild(cardBack)
-        card.appendChild(cardContent)
-        poketainer.appendChild(card)
+        let pokeFront = document.createElement('div')
+        pokeFront.className = 'card-face card-face-front'
+        pokeFront.textContent = 'Front'
+        let pokeBack = document.createElement('div')
+        pokeBack.className = 'card-face card-face-back'
+        pokeBack.textContent = 'Back'
+
+        pokeCard.appendChild(pokeFront)
+        pokeCard.appendChild(pokeBack)
+        pokeScene.appendChild(pokeCard)
+        poketainer.appendChild(pokeScene)
     })
 }
+
