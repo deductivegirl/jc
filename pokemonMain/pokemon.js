@@ -1,6 +1,6 @@
 let poketainer = document.querySelector('.poketainer')
 
-//too specific
+// below is too specific
 /* function getPokedata(url) {
     fetch(url).then(function (response) {
         response.json().then(function (pokemon) {
@@ -37,8 +37,7 @@ getAPIData('https://pokeapi.co/api/v2/pokemon/?&limit=25').then(
     }
 )
 
-function populatePokecard(pokemon) {
-    pokemonArray.forEach((pokemon) => {
+function populatePokecard(onePokemon) {
         let pokeScene = document.createElement('div')
         pokeScene.className = 'scene'
         let pokeCard = document.createElement('div')
@@ -47,17 +46,28 @@ function populatePokecard(pokemon) {
             pokeCard.classList.toggle('is-flipped')
         })
 
-        let pokeFront = document.createElement('div')
-        pokeFront.className = 'card-face card-face-front'
-        pokeFront.textContent = pokemon.name
-        let pokeBack = document.createElement('div')
-        pokeBack.className = 'card-face card-face-back'
-        pokeBack.textContent = 'Back'
+        let pokeFront = populateCardFront(onePokemon)
+        let pokeBack = populateCardBack(onePokemon)
 
         pokeCard.appendChild(pokeFront)
         pokeCard.appendChild(pokeBack)
         pokeScene.appendChild(pokeCard)
         poketainer.appendChild(pokeScene)
-    })
 }
 
+function populateCardFront(pokeMon) {
+    let pokeFront = document.createElement('div')
+    pokeFront.className = 'card-face card-face-front'
+    pokeFront.textContent = `${pokeMon.name} ${pokeMon.id}`
+    let frontImg = document.createElement('img')
+    frontImg.src = '../images/pokeball.png'
+    pokeFront.appendChild(frontImg)
+    return pokeFront
+}
+
+function populateCardBack(pokeMon) {
+    let pokeBack = document.createElement('div')
+    pokeBack.className = 'card-back card-face-back'
+    pokeBack.textContent = pokeMon.stats[0].stat.name
+    return pokeBack
+}
