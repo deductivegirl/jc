@@ -1,5 +1,7 @@
 let poketainer = document.querySelector('.poketainer')
 let startButton = document.querySelector('#startButton')
+let newButton = document.querySelector('#newButton')
+
 
 startButton.addEventListener('click', () => {
     loadPage()
@@ -61,19 +63,44 @@ function populatePokecard(onePokemon) {
         poketainer.appendChild(pokeScene)
 }
 
-function populateCardFront(pokeMon) {
+function populateCardFront(pokemon) {
     let pokeFront = document.createElement('div')
     pokeFront.className = 'card-face card-face-front'
-    pokeFront.textContent = `${pokeMon.name} ${pokeMon.id}`
+    pokeFront.textContent = `${pokemon.name} ${pokemon.id}`
     let frontImg = document.createElement('img')
-    frontImg.src = '../images/pokeball.png'
+    frontImg.src = `../images/pokemons/${getImageFileName(pokemon)}`
     pokeFront.appendChild(frontImg)
     return pokeFront
 }
 
-function populateCardBack(pokeMon) {
+function getImageFileName(pokemon) {
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    } else if (pokemon.id < 100 && pokemon.id > 9) {
+        return `0${pokemon.id}`
+    } else {
+        return `Pokeball.png`
+    }
+}
+
+function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card-back card-face-back'
-    pokeBack.textContent = pokeMon.stats[0].stat.name
+    pokeBack.textContent = pokemon.stats[0].stat.name
     return pokeBack
+}
+
+class Pokemon {
+    constructor(height, weight, name, stats) {
+        this.height = height
+        this.weight = weight
+        this.name = name
+        this.stats = stats
+        this.id = 900
+    }
+}
+
+function addPokemon() {
+    let newPokemon = new Pokemon(50, 25, 'Thoreon', [ { stat: { name: 'Thunder Belly' } } ])
+    populatePokecard(newPokemon)
 }

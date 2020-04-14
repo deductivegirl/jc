@@ -71,6 +71,10 @@ header {
     backface-visibility: hidden;
 }
 
+.front {
+    background-image: image-set('../images/pokemoncard.jpg');
+}
+
 .back {
     background: #13095e;
     color: white;
