@@ -1,5 +1,4 @@
-export const representatives = [
-    {
+export const representatives = [{
       id: "A000374",
       title: "Representative",
       short_title: "Rep.",

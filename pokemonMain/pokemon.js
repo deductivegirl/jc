@@ -6,6 +6,11 @@ let newButton = document.querySelector('#newButton')
 startButton.addEventListener('click', () => {
     loadPage()
 })
+newButton.addEventListener('click', () => {
+    addPokemon()
+})
+
+
 // below is too specific
 /* function getPokedata(url) {
     fetch(url).then(function (response) {
@@ -22,8 +27,8 @@ getPokedata('https://pokeapi.co/api/v2/pokemon') */
 async function getAPIData(url) {
     //  *look more into try/catch and async*
     try {
-        const response = fetch(url)
-        const data = response.json()
+        const response = await fetch(url)
+        const data = await response.json()
         return data
     }
     catch (error) {
@@ -64,13 +69,17 @@ function populatePokecard(onePokemon) {
 }
 
 function populateCardFront(pokemon) {
-    let pokeFront = document.createElement('div')
-    pokeFront.className = 'card-face card-face-front'
-    pokeFront.textContent = `${pokemon.name} ${pokemon.id}`
+    let cardFront = document.createElement('div')
+    cardFront.className = 'card_face card_face-front'
+
     let frontImg = document.createElement('img')
-    frontImg.src = `../images/pokemons/${getImageFileName(pokemon)}`
-    pokeFront.appendChild(frontImg)
-    return pokeFront
+    frontImg.src = `../images/pokemons/${getImageFileName(pokemon)}.png`
+
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
+    cardFront.appendChild(frontImg)
+    cardFront.appendChild(frontLabel)
+    return cardFront
 }
 
 function getImageFileName(pokemon) {
