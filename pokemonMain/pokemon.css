@@ -23,11 +23,27 @@ li {
     list-style-type: none;
 }
 
+p {
+    color: #13095e;
+    font-weight: bold;
+}
+
+
+#logo {
+    width: 290px;
+    height: 140px;
+}
+
 header {
     background-color: #2311a8;
-    height: 80px;
     display: flex;
     justify-content: center;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .poketainer {
@@ -40,6 +56,8 @@ header {
     width: 200px;
     height: 260px;
     margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
     perspective: 600px;
 }
 
@@ -52,33 +70,28 @@ header {
     position: relative;
 }
 
-.card:hover .content {
-    transform: rotateY( -180deg );
-    transition: transform 0.75s;
+.card.is-flipped {
+    transform: rotateY(180deg);
 }
 
-.front,
-.back {
-    background: white;
-    color: #13095e;
+.card_face {
     position: absolute;
-    height: 100%;
     width: 100%;
-    text-align: center;
-    line-height: 300px;
-    font-size: 60px;
-    border-radius: 5px;
-    backface-visibility: hidden;
-}
-
-.front {
-    background-image: image-set('../images/pokemoncard.jpg');
-}
-
-.back {
-    background: #13095e;
+    height: 100%;
     color: white;
-    transform: rotateY( 180deg );
+    text-align: center;
+    font-size: 1.25rem;
+    backface-visibility: hidden;
+    border-radius: 13px;
+}
+
+.card_face-front {
+    background-image: linear-gradient(rgba(211, 211, 211, 0.5), rgba(211, 211, 211, 0.5)), url("../images/pokemoncard.jpg");
+    background-size: 200px 260px;
+}
+
+.card_face-back {
+    transform: rotateY(180deg);
 }
 
 footer {

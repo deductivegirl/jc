@@ -87,16 +87,18 @@ function getImageFileName(pokemon) {
         return `00${pokemon.id}`
     } else if (pokemon.id < 100 && pokemon.id > 9) {
         return `0${pokemon.id}`
+    } else if (pokemon.id >= 100) {
+        return pokemon.id
     } else {
-        return `Pokeball.png`
+        
     }
 }
 
 function populateCardBack(pokemon) {
-    let pokeBack = document.createElement('div')
-    pokeBack.className = 'card-back card-face-back'
-    pokeBack.textContent = pokemon.stats[0].stat.name
-    return pokeBack
+    let cardBack = document.createElement('div')
+    cardBack.className = 'card_face card_face-back'
+    cardBack.textContent = pokemon.stats[0].stat.name
+    return cardBack
 }
 
 class Pokemon {
@@ -110,6 +112,9 @@ class Pokemon {
 }
 
 function addPokemon() {
-    let newPokemon = new Pokemon(50, 25, 'Thoreon', [ { stat: { name: 'Thunder Belly' } } ])
+    let newPokemon = new Pokemon(50, 25, 'Thoreon', [
+        { 
+            stat: { name: 'Thunder Belly' }  
+        }])
     populatePokecard(newPokemon)
 }
