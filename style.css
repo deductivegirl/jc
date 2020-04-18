@@ -81,10 +81,9 @@
     
     #projects {
       background-color: #808080;
-      height: 500px;
       display: flex;
       justify-content: space-evenly;
-      align-items: center;
+      flex-wrap: wrap;
     }
     
     .project-tile {
@@ -92,6 +91,7 @@
       width: 300px;
       text-align: center;
       text-decoration: none;
+      margin: 1.5rem;
     }
     
     .project-image {
