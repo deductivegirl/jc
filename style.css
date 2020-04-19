@@ -26,7 +26,7 @@
       color: #fffdd0;
     }
     
-    p {
+    figcaption {
       color: #fffdd0;
       margin: 0;
     }
@@ -82,8 +82,8 @@
     #projects {
       background-color: #808080;
       display: flex;
-      justify-content: space-evenly;
       flex-wrap: wrap;
+      justify-content: space-evenly;
     }
     
     .project-tile {
@@ -91,12 +91,12 @@
       width: 300px;
       text-align: center;
       text-decoration: none;
-      margin: 1.5rem;
     }
     
     .project-image {
       height: 300px;
       width: 300px;
+      margin: 1.5rem;
     }
     
     .project-caption {
