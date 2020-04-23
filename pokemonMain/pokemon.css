@@ -36,15 +36,24 @@ p {
 
 header {
     background-color: #3b4cca;
+    width: 100%;
+    height: 180px;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 main {
     /*background: fixed no-repeat center/100% url('/images/pokeballback.png');
     object-fit: cover;*/
+    margin-top: 5rem;
     height: 100vh;
     width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
 }
 
 #buttons {

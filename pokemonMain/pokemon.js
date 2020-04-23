@@ -43,8 +43,8 @@ async function getAPIData(url) {
   }
 }
 
-function loadPage() {
-  getAPIData("https://pokeapi.co/api/v2/pokemon/?&limit=25").then(
+function loadPage(offset, limit) {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`).then(
     async (data) => {
     for (const pokemon of data.results) {
       await getAPIData(pokemon.url).then((pokeData) => {
@@ -70,6 +70,7 @@ function populatePokecard(onePokemon) {
   pokeCard.appendChild(pokeBack)
   pokeScene.appendChild(pokeCard)
   poketainer.appendChild(pokeScene)
+  return pokeScene.getBoundingClientRect()
 }
 
 function populateCardFront(pokemon) {
@@ -93,9 +94,7 @@ function getImageFileName(pokemon) {
     return `0${pokemon.id}`
   } else if (pokemon.id >= 100) {
     return pokemon.id
-  } else {
-      return 'Pokeball.png'
-  }
+  } else return `Pokeball.png`
 }
 
 function populateCardBack(pokemon) {
@@ -103,7 +102,7 @@ function populateCardBack(pokemon) {
   cardBack.className = "card_face card_face-back"
   let abilityList = document.createElement("ul")
   abilityList.textContent = 'Abilities: '
-  pokemon.abilities.forEach((ability) => {
+  pokemon.abilities.forEach(ability => {
     let abilityName = document.createElement("li")
     abilityName.textContent = `${ability.ability.name.charAt(0).toUpperCase()}${ability.ability.name.slice(1)}`
     abilityList.appendChild(abilityName)
@@ -113,18 +112,17 @@ function populateCardBack(pokemon) {
   moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
   cardBack.appendChild(abilityList)
   cardBack.appendChild(moveList)
-  getPokemonMoves(pokemon)
   return cardBack
 }
 
 async function getPokemonMoves(pokemon, levelLearned) {
   //console.log(`Name: ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)} |Number of Moves: ${pokemon.moves.length}`)
-  return pokemon.moves.filter((move) => {
+  return pokemon.moves.filter(move => {
     return move.version_group_details[0].level_learned_at === levelLearned
   })
 }
 
-/*class Pokemon {
+class Pokemon {
   constructor(height, weight, name, abilities) {
     this.height = height
     this.weight = weight
@@ -141,4 +139,4 @@ function addPokemon() {
     }, 
   ])
   populatePokecard(newPokemon)
-}*/
+}
