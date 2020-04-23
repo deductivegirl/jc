@@ -10,7 +10,13 @@ startButton.addEventListener("click", () => {
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
-  addPokemon()
+  const pokemonRect = addPokemon()
+  console.log(pokemonRect)
+  window.scrollTo({
+    top: pokemonRect.top,
+    left: pokemonRect.left,
+    behavior: 'smooth',
+  })
 })
 
 // below is too specific
