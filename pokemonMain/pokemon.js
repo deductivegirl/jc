@@ -2,8 +2,12 @@ let poketainer = document.querySelector(".poketainer")
 let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
 
+newButton.hidden = true
+
 startButton.addEventListener("click", () => {
   loadPage()
+  startButton.hidden = true
+  newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
   addPokemon()
