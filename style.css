@@ -89,6 +89,7 @@
     .project-tile {
       height: 300px;
       width: 300px;
+      margin: 1.5rem;
       text-align: center;
       text-decoration: none;
     }
@@ -96,11 +97,11 @@
     .project-image {
       height: 300px;
       width: 300px;
-      margin: 1.5rem;
     }
     
     .project-caption {
       background-color: #161940;
+      margin: 0px;
       padding: 10px;
     }
     
