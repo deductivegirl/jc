@@ -64,6 +64,7 @@ main {
 }
 
 .poketainer {
+    padding: 0px 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -86,7 +87,7 @@ main {
 }
 
 .card.is-flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 .card_face {
@@ -112,7 +113,7 @@ main {
 }
 
 .card_face ul {
-    margin-top: 2.4rem;
+    margin-top: 2.5rem;
     color: black;
     font-size: 1.1rem;
     text-align: left;
@@ -128,4 +129,6 @@ main {
     font-size: 1.1rem;
     text-align: left;
     margin-left: 1.05rem;
+    position: absolute;
+    top: 125px; left: 8px;
 }
