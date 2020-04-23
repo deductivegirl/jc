@@ -70,8 +70,7 @@ function populateCardFront(pokemon) {
   frontImg.src = `../images/pokemons/${getImageFileName(pokemon)}.png`
 
   let frontLabel = document.createElement("p")
-  frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}
-    ${pokemon.name.slice(1)}`
+  frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
   cardFront.appendChild(frontImg)
   cardFront.appendChild(frontLabel)
   return cardFront
@@ -96,7 +95,7 @@ function populateCardBack(pokemon) {
   abilityList.textContent = 'Abilities: '
   pokemon.abilities.forEach((ability) => {
     let abilityName = document.createElement("li")
-    abilityName.textContent = ability.ability.name
+    abilityName.textContent = `${ability.ability.name.charAt(0).toUpperCase()}${ability.ability.name.slice(1)}`
     abilityList.appendChild(abilityName)
   })
   let moveList = document.createElement('p')
@@ -114,7 +113,7 @@ async function getPokemonMoves(pokemon, levelLearned) {
   })
 }
 
-class Pokemon {
+/*class Pokemon {
   constructor(height, weight, name, abilities) {
     this.height = height
     this.weight = weight
@@ -131,4 +130,4 @@ function addPokemon() {
     }, 
   ])
   populatePokecard(newPokemon)
-}
+}*/
