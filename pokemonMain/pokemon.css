@@ -20,12 +20,11 @@ a {
 }
 
 li {
-    list-style-type: none;
+    list-style-type: circle;
 }
 
 p {
-    color: #13095e;
-    font-weight: bold;
+    color: black;
 }
 
 
@@ -74,8 +73,6 @@ main {
     width: 200px;
     height: 260px;
     margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 13px;
     perspective: 600px;
 }
 
@@ -100,7 +97,7 @@ main {
     text-align: center;
     font-size: 1.25rem;
     backface-visibility: hidden;
-    border-radius: 13px;
+    border-radius: 7px;
 }
 
 .card_face-front {
@@ -109,10 +106,26 @@ main {
 }
 
 .card_face-back {
+    background-image: url('/images/pokemonFront.jpg');
+    background-size: 200px 260px;
     transform: rotateY(180deg);
 }
 
 .card_face ul {
+    margin-top: 2.4rem;
+    color: black;
+    font-size: 1.1rem;
     text-align: left;
-    margin-left: -5px;
+}
+
+.card_face li {
+    color: black;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.moves {
+    font-size: 1.1rem;
+    text-align: left;
+    margin-left: 1.05rem;
 }

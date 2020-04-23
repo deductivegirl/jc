@@ -103,6 +103,7 @@ function populateCardBack(pokemon) {
     abilityList.appendChild(abilityName)
   })
   let moveList = document.createElement('p')
+  moveList.className = "moves"
   moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
   cardBack.appendChild(abilityList)
   cardBack.appendChild(moveList)
