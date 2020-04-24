@@ -41,7 +41,7 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 0;
+    top: 0; 
     left: 0;
 }
 
