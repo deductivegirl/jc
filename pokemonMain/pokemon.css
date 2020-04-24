@@ -25,6 +25,7 @@ li {
 
 p {
     color: black;
+    font-weight: bold;
 }
 
 
@@ -111,6 +112,16 @@ main {
     border-radius: 7px;
 }
 
+.frontImg {
+    height: 180px;
+    width: 180px;
+    padding: 5px;
+}
+
+.frontLabel {
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
 .card_face-front {
     background-image: linear-gradient(rgba(211, 211, 211, 0.5), rgba(211, 211, 211, 0.5)), url("../images/pokemoncard.jpg");
     background-size: 200px 260px;
@@ -137,6 +148,7 @@ main {
 
 .moves {
     font-size: 1.1rem;
+    font-weight: normal;
     text-align: left;
     margin-left: 1.05rem;
     position: absolute;

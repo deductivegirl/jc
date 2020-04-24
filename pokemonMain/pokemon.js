@@ -5,18 +5,14 @@ let newButton = document.querySelector("#newButton")
 newButton.hidden = true
 
 startButton.addEventListener("click", () => {
-  loadPage()
+  loadPage(0, 25)
   startButton.hidden = true
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
-  const pokemonRect = addPokemon()
-  console.log(pokemonRect)
-  window.scrollTo({
-    top: pokemonRect.top,
-    left: pokemonRect.left,
-    behavior: 'smooth',
-  })
+  let num = 25
+  addPokemon(num)
+  num++
 })
 
 // below is too specific
@@ -78,9 +74,11 @@ function populateCardFront(pokemon) {
   cardFront.className = "card_face card_face-front"
 
   let frontImg = document.createElement("img")
-  frontImg.src = `../images/pokemons/${getImageFileName(pokemon)}.png`
+  frontImg.className = "frontImg"
+  frontImg.src = `https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`
 
   let frontLabel = document.createElement("p")
+  frontLabel.className = "frontLabel"
   frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
   cardFront.appendChild(frontImg)
   cardFront.appendChild(frontLabel)
@@ -122,21 +120,26 @@ async function getPokemonMoves(pokemon, levelLearned) {
   })
 }
 
-class Pokemon {
-  constructor(height, weight, name, abilities) {
-    this.height = height
-    this.weight = weight
-    this.name = name
-    this.id = 900
-    this.abilities = abilities
-  }
-}
+//class Pokemon {
+//  constructor(height, weight, name, abilities) {
+//    this.height = height
+//    this.weight = weight
+//    this.name = name
+//    this.id = 900
+//    this.abilities = abilities
+//  }
+//}
 
-function addPokemon() {
-  let newPokemon = new Pokemon(50, 25, "Thoreon", [
-    {
-      ability: { name: "Thunderbelly" },
-    }, 
-  ])
-  populatePokecard(newPokemon)
+//https://pokeapi.co/api/v2/pokemon/#
+
+function addPokemon(add) {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon/${add}`)
+  //.then(
+  //  async (data) => {
+  //  for (const pokemon of data.results) {
+  //    await getAPIData(pokemon.url).then((pokeData) => {
+  //      populatePokecard(pokeData)
+  //    })
+  //  }
+  //})
 }
