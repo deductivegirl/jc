@@ -1,4 +1,5 @@
 import { senators } from './senators.js'
+import { removeChildren } from '../utils.js'
 //import { representatives } from './representatives.js'
 
 const container = document.querySelector('.container')
@@ -16,6 +17,7 @@ const filterSenators = (prop, value) => {
 }
 
 function simpMapSenators(senatorArray) { 
+    removeChildren(container)
     return senatorArray.map(senator => {
         let middleName = senator.middle_name ? ` ${senator.middle_name}` : ` `
         return {

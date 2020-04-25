@@ -1,4 +1,5 @@
 import { representatives } from './representatives.js'
+import { removeChildren } from '../utils.js'
 
 const container = document.querySelector('.container')
 
@@ -30,6 +31,7 @@ function simpMapReps(repArrary) {
 }
 
 function populateContainer(smallRepsArray) {
+    removeChildren(container)
     return smallRepsArray.forEach(rep => {
         let repDiv = document.createElement('div')
         let repFigure = document.createElement('figure')
