@@ -3,6 +3,12 @@ import { senators } from './senators.js'
 
 const container = document.querySelector('.container')
 
+let senButton = document.querySelector('#senButton')
+
+senButton.addEventListener("click", () => {
+    populateContainer(simpMapSenators(senators))
+})
+
 //filter, map, reduce
 
 const filterSenators = (prop, value) => {

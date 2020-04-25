@@ -3,17 +3,25 @@ let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
 
 newButton.hidden = true
-
 startButton.addEventListener("click", () => {
-  loadPage(0, 25)
+  loadPage(0, 24)
   startButton.hidden = true
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
   let num = 25
+  console.log(num)
   addPokemon(num)
   num++
 })
+
+//const pokemonRect = addPokemon()
+//  console.log(pokemonRect)
+//  window.scrollTo({
+//    top: pokemonRect.top,
+//    left: pokemonRect.left,
+//    behavior: 'smooth'
+//  })
 
 // below is too specific
 /* function getPokedata(url) {
@@ -133,13 +141,7 @@ async function getPokemonMoves(pokemon, levelLearned) {
 //https://pokeapi.co/api/v2/pokemon/#
 
 function addPokemon(add) {
+  do {
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${add}`)
-  //.then(
-  //  async (data) => {
-  //  for (const pokemon of data.results) {
-  //    await getAPIData(pokemon.url).then((pokeData) => {
-  //      populatePokecard(pokeData)
-  //    })
-  //  }
-  //})
+  } while (newButton.addEventListener)
 }
