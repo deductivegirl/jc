@@ -39,6 +39,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 #head {
   background-image: url('../images/backStars.jpg');
   background-repeat: repeat-x;
@@ -69,7 +73,8 @@ ul {
   height: 50px;
 }
 
-button {
+.buttons {
+  display: flex;
   background-color: black;
   color: #ffe861;
   height: 3rem;
@@ -81,10 +86,6 @@ button {
   cursor: pointer;
 }
 
-.buttons {
-  display: flex;
-}
-
 .genders {
   display: flex;
   justify-content: space-evenly;
@@ -93,6 +94,7 @@ button {
 
 #body {
   margin-top: 150px;
+  text-align: center;
 }
 
 #gallery {
@@ -110,10 +112,12 @@ button {
   border: black 2px solid;
 }
 
-footer {
-  background-color: #13095e;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#top {
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
 }

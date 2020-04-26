@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="starwars.css" rel="stylesheet" />
+    <script src="star_wars.js" type="module"></script>
     <title>Star Wars API</title>
   </head>
   <body>
@@ -14,17 +15,16 @@
     </header>
 
     <section id="body">
-      <div class="buttons">
+      <div>
         <a class="backArrow" href="../index.html"><img src="/images/backArrow.png"></a>
         <div class="genders">
-          <button id="maleButton">Male Characters</button>
-          <button id="femaleButton">Female Characters</button>
-          <button id="otherButton">Other Characters</button>
+          <button id="maleButton" class="buttons">Male Characters</button>
+          <button id="femaleButton" class="buttons">Female Characters</button>
+          <button id="otherButton" class="buttons">Other Characters</button>
         </div>
       </div>
       <div id="gallery"></div>
+      <a id="top" class="buttons" href="#body">Top of Page</a>
     </section>
-
-    <script src="star_wars.js" type="module"></script>
   </body>
 </html>
