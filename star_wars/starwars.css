@@ -67,6 +67,8 @@ a {
   background-color: transparent;
   border: none;
   margin: 15px;
+  position: absolute;
+  left: 0;
 }
 
 .backArrow img {
@@ -88,13 +90,12 @@ a {
 
 .genders {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
 #body {
-  margin-top: 150px;
-  text-align: center;
+  margin-top: 160px;
 }
 
 #gallery {
