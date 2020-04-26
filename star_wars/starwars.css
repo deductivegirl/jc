@@ -39,10 +39,22 @@ ul {
   list-style: none;
 }
 
-a > img {
+.characters {
   height: 16rem;
   margin: 10px;
   border: black 2px solid;
+}
+
+.backArrow {
+  background-color: transparent;
+  border: none;
+  margin: 15px;
+  padding-top: 50px;
+}
+
+.backArrow img {
+  height: 50px;
+  cursor: pointer;
 }
 
 button {

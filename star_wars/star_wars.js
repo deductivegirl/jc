@@ -35,6 +35,7 @@ function populateDOM (characters) {
       personAnchor.href = "#"
 
       let personImg = document.createElement("img")
+      personImg.className = "characters"
       personImg.src = `https://starwars-visualguide.com/assets/img/characters/${imageNumber}.jpg`
 
       personImg.addEventListener('error', (event) => {
