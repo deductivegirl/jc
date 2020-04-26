@@ -1,18 +1,16 @@
 let poketainer = document.querySelector(".poketainer")
 let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
+let num = 2
 
 newButton.hidden = true
 startButton.addEventListener("click", () => {
-  loadPage(0, 24)
+  loadPage(0, 2)
   startButton.hidden = true
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
-  let num = 25
-  console.log(num)
-  addPokemon(num)
-  num++
+  loadPage(num++, 1)
 })
 
 //const pokemonRect = addPokemon()
@@ -122,10 +120,13 @@ function populateCardBack(pokemon) {
 }
 
 async function getPokemonMoves(pokemon, levelLearned) {
+
   //console.log(`Name: ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)} |Number of Moves: ${pokemon.moves.length}`)
-  return pokemon.moves.filter(move => {
+  let temp = pokemon.moves.filter(move => {
     return move.version_group_details[0].level_learned_at === levelLearned
   })
+  console.log('moveArray', temp)
+  return temp
 }
 
 //class Pokemon {
