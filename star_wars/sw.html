@@ -9,25 +9,21 @@
   <body>
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
 
-    <section></section>
-
-    <section id="head">
-      <h1>Star Wars API</h1>
-    </section>
+    <header id="head">
+      <img id="logo" src="../images/swlogo.png">
+    </header>
 
     <section id="body">
       <div class="buttons">
         <a class="backArrow" href="../index.html"><img src="/images/backArrow.png"></a>
-        <button id="maleButton">Male Characters</button>
-        <button id="femaleButton">Female Characters</button>
-        <button id="otherButton">Other Characters</button>
+        <div class="genders">
+          <button id="maleButton">Male Characters</button>
+          <button id="femaleButton">Female Characters</button>
+          <button id="otherButton">Other Characters</button>
+        </div>
       </div>
-
       <div id="gallery"></div>
     </section>
-    <footer>
-      <h4>DGM 1600 | 2020 &copy Jessica Craig</h4>
-    </footer>
 
     <script src="star_wars.js" type="module"></script>
   </body>

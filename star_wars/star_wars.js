@@ -25,11 +25,10 @@ femaleButton.addEventListener('click', function(event) { populateDOM(femaleChara
 otherButton.addEventListener('click', function(event) { populateDOM(otherCharacters) })
 
 
-
-function populateDOM (characters) {
+function populateDOM (genders) {
    removeChildren(gallery)
 
-   characters.forEach(person => {
+   genders.forEach(person => {
       let imageNumber = getEndNumber(person.url)
       let personAnchor = document.createElement("a")
       personAnchor.href = "#"
@@ -44,11 +43,11 @@ function populateDOM (characters) {
          personImg.hidden = true
       })
       //creates character name
-      /*personImg.addEventListener("click", (event) => {
-         let personHead = document.createElement("h3")
-         personHead.textContent = person.name
-         gallery.appendChild(personHead)
-      })*/
+      // personImg.addEventListener("click", (event) => {
+      //    let personHead = document.createElement("h3")
+      //    personHead.textContent = person.name
+      //    gallery.appendChild(personHead)
+      // })
 
       personAnchor.appendChild(personImg)
       gallery.appendChild(personAnchor)
