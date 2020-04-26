@@ -113,14 +113,13 @@ function populateCardBack(pokemon) {
   })
   let moveList = document.createElement('p')
   moveList.className = "moves"
-  moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
+  getPokemonMoves(pokemon, 0).then(moves => moveList.textContent = `Level 0 Moves: ${moves.length}`)
   cardBack.appendChild(abilityList)
   cardBack.appendChild(moveList)
   return cardBack
 }
 
 async function getPokemonMoves(pokemon, levelLearned) {
-
   //console.log(`Name: ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)} |Number of Moves: ${pokemon.moves.length}`)
   let temp = pokemon.moves.filter(move => {
     return move.version_group_details[0].level_learned_at === levelLearned

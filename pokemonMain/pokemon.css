@@ -37,15 +37,17 @@ p {
 
 .backArrow img {
     height: 50px;
+    cursor: pointer;
 }
 
 #logo {
-    height: 100px;
+    height: 170px;
 }
 
 header {
     background-color: #3b4cca;
     width: 100%;
+    height: 180px;
     position: fixed;
     top: 0; 
     left: 0;
@@ -66,10 +68,7 @@ main {
     left: 0;
 }
 
-
-
 #buttons {
-    /* width: 100%; */
     display: flex;
     justify-content: center;
     padding: 1rem;
