@@ -6,22 +6,13 @@ let num = 25
 
 newButton.hidden = true
 startButton.addEventListener("click", () => {
-  loadPage(0, 25)
+  loadPage(0, num, false)
   startButton.hidden = true
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
-  loadPage(num++, 1)
-  down.scrollIntoView(false)
+  loadPage(num++, 1, true)
 })
-
-
-
-//const pokemonRect = loadPage(num++, 1)
-//  window.scrollTo({
-//    left: pokemonRect.left,
-//    behavior: 'smooth'
-//})
 
 // below is too specific
 /* function getPokedata(url) {
@@ -47,15 +38,20 @@ async function getAPIData(url) {
   }
 }
 
-function loadPage(offset, limit) {
+function loadPage(offset, limit, shouldScroll) {
   getAPIData(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`).then(
     async (data) => {
-    for (const pokemon of data.results) {
-      await getAPIData(pokemon.url).then((pokeData) => {
-        populatePokecard(pokeData)
-      })
-    }
-  })
+      let lastCardId = null
+      for (const pokemon of data.results) {
+        await getAPIData(pokemon.url).then((pokeData) => {
+          populatePokecard(pokeData)
+          lastCardId = pokeData.id
+        })
+      }
+      if (lastCardId !== null && shouldScroll) {
+        document.getElementById(lastCardId).scrollIntoView({ behavior: "smooth" })
+      }
+    })  
 }
 
 function populatePokecard(onePokemon) {
@@ -67,6 +63,8 @@ function populatePokecard(onePokemon) {
     pokeCard.classList.toggle("is-flipped")
   })
 
+  pokeCard.id = onePokemon.id
+
   let pokeFront = populateCardFront(onePokemon)
   let pokeBack = populateCardBack(onePokemon)
 
@@ -74,7 +72,8 @@ function populatePokecard(onePokemon) {
   pokeCard.appendChild(pokeBack)
   pokeScene.appendChild(pokeCard)
   poketainer.appendChild(pokeScene)
-  return pokeScene.getBoundingClientRect()
+
+  return poketainer.getBoundingClientRect()
 }
 
 function populateCardFront(pokemon) {
