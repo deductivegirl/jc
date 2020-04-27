@@ -1,7 +1,7 @@
 let poketainer = document.querySelector(".poketainer")
 let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
-let foot = document.querySelector("#fo")
+let down = document.getElementById("#down")
 let num = 25
 
 newButton.hidden = true
@@ -12,8 +12,10 @@ startButton.addEventListener("click", () => {
 })
 newButton.addEventListener("click", () => {
   loadPage(num++, 1)
-  this.scrollIntoView(false)
+  down.scrollIntoView(false)
 })
+
+
 
 //const pokemonRect = loadPage(num++, 1)
 //  window.scrollTo({
