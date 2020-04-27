@@ -61,6 +61,7 @@ main {
     /*background: fixed no-repeat center/100% url('/images/pokeballback.png');
     object-fit: cover;*/
     margin-top: 5rem;
+    margin-bottom: 5rem;
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -86,7 +87,6 @@ main {
 }
 
 .poketainer {
-    padding: 0px 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -167,3 +167,13 @@ main {
     position: absolute;
     top: 125px; left: 8px;
 }
+
+#top {
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    margin: 2rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }

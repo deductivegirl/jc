@@ -1,25 +1,25 @@
 let poketainer = document.querySelector(".poketainer")
 let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
-let num = 2
+let foot = document.querySelector("#fo")
+let num = 25
 
 newButton.hidden = true
 startButton.addEventListener("click", () => {
-  loadPage(0, 2)
+  loadPage(0, 25)
   startButton.hidden = true
   newButton.hidden = false
 })
 newButton.addEventListener("click", () => {
   loadPage(num++, 1)
+  this.scrollIntoView(false)
 })
 
-//const pokemonRect = addPokemon()
-//  console.log(pokemonRect)
+//const pokemonRect = loadPage(num++, 1)
 //  window.scrollTo({
-//    top: pokemonRect.top,
 //    left: pokemonRect.left,
 //    behavior: 'smooth'
-//  })
+//})
 
 // below is too specific
 /* function getPokedata(url) {
@@ -124,24 +124,7 @@ async function getPokemonMoves(pokemon, levelLearned) {
   let temp = pokemon.moves.filter(move => {
     return move.version_group_details[0].level_learned_at === levelLearned
   })
-  console.log('moveArray', temp)
   return temp
 }
 
-//class Pokemon {
-//  constructor(height, weight, name, abilities) {
-//    this.height = height
-//    this.weight = weight
-//    this.name = name
-//    this.id = 900
-//    this.abilities = abilities
-//  }
-//}
-
 //https://pokeapi.co/api/v2/pokemon/#
-
-function addPokemon(add) {
-  do {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon/${add}`)
-  } while (newButton.addEventListener)
-}
