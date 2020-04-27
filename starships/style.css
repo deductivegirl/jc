@@ -6,6 +6,7 @@ body {
     font-family: "Rubik", sans-serif;
     padding: 0;
     margin: 0;
+    background-image: url("../images/backStarsShip.jpg");
 }
 
 h1 {
@@ -23,29 +24,24 @@ li {
     list-style-type: none;
 }
 
-header {
-    background-color: #13095e;
-    height: 80px;
-    padding: .8rem;
+#head {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: fit-content;
+    padding: 15px;
 }
 
 #navMain {
-    margin: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
     display: flex;
 }
 
 .starshipNav {
-    border: solid 2px;
+    background-color: black;
     padding: 1rem;
 }
-
-footer {
-    background-color: #353535;
-    color: #fffdd0;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
