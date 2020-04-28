@@ -85,6 +85,7 @@ a {
   font-weight: 500;
   border: none;
   margin: 10px;
+  padding: 1rem;
   cursor: pointer;
 }
 
@@ -120,4 +121,5 @@ a {
   position: fixed;
   bottom: 0;
   right: 0;
+  scroll-behavior: smooth;
 }

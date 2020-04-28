@@ -48,6 +48,18 @@
     align-items: center;
   }
 
+  .backArrow {
+    background-color: transparent;
+    border: none;
+    margin: 15px;
+    position: absolute;
+    left: 0;
+  }
+  
+  .backArrow img {
+    height: 50px;
+  }
+
   .buttons {
     margin: 1rem;
     display: flex;
@@ -55,7 +67,7 @@
     align-items: center;
   }
 
-  #senButton, #repButton {
+  #senButton, #repButton , #top {
     background-color: #fffdd0 ;
     color: #13095e;
     border: none;
@@ -104,11 +116,14 @@
     color: white;
   }
 
-  footer {
-    background-color: #13095e;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #top {
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    scroll-behavior: smooth;
+    text-decoration: none;
   }
   
