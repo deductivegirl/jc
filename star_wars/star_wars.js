@@ -30,8 +30,6 @@ function populateDOM (genders) {
 
    genders.forEach(person => {
       let imageNumber = getEndNumber(person.url)
-      let personAnchor = document.createElement("a")
-      personAnchor.href = "#"
 
       let personImg = document.createElement("img")
       personImg.className = "characters"
@@ -49,8 +47,7 @@ function populateDOM (genders) {
       //    gallery.appendChild(personHead)
       // })
 
-      personAnchor.appendChild(personImg)
-      gallery.appendChild(personAnchor)
+      gallery.appendChild(personImg)
    })
 }
 populateDOM(people)
