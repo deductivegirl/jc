@@ -1,17 +1,23 @@
 let poketainer = document.querySelector(".poketainer")
 let startButton = document.querySelector("#startButton")
 let newButton = document.querySelector("#newButton")
+let addButton = document.querySelector('#addButton')
 let down = document.getElementById("#down")
 let num = 25
 
 newButton.hidden = true
+addButton.hidden = true
 startButton.addEventListener("click", () => {
   loadPage(0, num, false)
   startButton.hidden = true
   newButton.hidden = false
+  addButton.hidden = false
 })
 newButton.addEventListener("click", () => {
   loadPage(num++, 1, true)
+})
+addButton.addEventListener("click", () => {
+  addPokemon()
 })
 
 // below is too specific
@@ -92,16 +98,6 @@ function populateCardFront(pokemon) {
   return cardFront
 }
 
-function getImageFileName(pokemon) {
-  if (pokemon.id < 10) {
-    return `00${pokemon.id}`
-  } else if (pokemon.id < 100 && pokemon.id > 9) {
-    return `0${pokemon.id}`
-  } else if (pokemon.id >= 100) {
-    return pokemon.id
-  } else return `Pokeball.png`
-}
-
 function populateCardBack(pokemon) {
   let cardBack = document.createElement("div")
   cardBack.className = "card_face card_face-back"
@@ -128,4 +124,26 @@ async function getPokemonMoves(pokemon, levelLearned) {
   return temp
 }
 
-//https://pokeapi.co/api/v2/pokemon/#
+class Pokemon {
+  constructor(height, weight, name, abilities, moves) {
+    this.height = height
+    this.weight = weight
+    this.name = name
+    this.abilities = abilities
+    this.moves = moves
+    this.id = 900
+  }
+}
+
+function addPokemon() {
+  let newPokemon = new Pokemon(50,25,'Carebear', 
+  [
+    { ability: { name: 'Rainbow rescue' } },
+    { ability: { name: 'Stare' } }
+  ],
+  [
+    { move: {name: 'Healhug' },
+      version_group_details: [ { level_learned_at: 0 } ] }
+  ])
+  return populatePokecard(newPokemon)
+}
