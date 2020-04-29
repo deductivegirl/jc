@@ -88,7 +88,7 @@ function populateCardFront(pokemon) {
 
   let frontImg = document.createElement("img")
   frontImg.className = "frontImg"
-  frontImg.src = `https://pokeres.bastionbot.org/images/pokemon/${getImageFileName(pokemon)}.png`
+  frontImg.src = getImageFileName(pokemon)
 
   let frontLabel = document.createElement("p")
   frontLabel.className = "frontLabel"
@@ -100,8 +100,8 @@ function populateCardFront(pokemon) {
 
 function getImageFileName(pokemon) {
   if (pokemon.id < 900) {
-    return pokemon.id
-  } else return `pokeball`
+    return `https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`
+  } else return `../images/pokeball.png`
 }
 
 function populateCardBack(pokemon) {
@@ -144,11 +144,11 @@ class Pokemon {
 function addPokemon() {
   let newPokemon = new Pokemon(50,25,'Carebear', 
   [
-    { ability: { name: 'Rainbow rescue' } },
+    { ability: { name: 'Hug' } },
     { ability: { name: 'Stare' } }
   ],
   [
-    { move: {name: 'Healhug' },
+    { move: {name: 'Rainbow rescue' },
       version_group_details: [ { level_learned_at: 0 } ] }
   ])
   return populatePokecard(newPokemon)
