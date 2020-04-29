@@ -88,7 +88,7 @@ function populateCardFront(pokemon) {
 
   let frontImg = document.createElement("img")
   frontImg.className = "frontImg"
-  frontImg.src = `https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`
+  frontImg.src = `https://pokeres.bastionbot.org/images/pokemon/${getImageFileName(pokemon)}.png`
 
   let frontLabel = document.createElement("p")
   frontLabel.className = "frontLabel"
@@ -96,6 +96,12 @@ function populateCardFront(pokemon) {
   cardFront.appendChild(frontImg)
   cardFront.appendChild(frontLabel)
   return cardFront
+}
+
+function getImageFileName(pokemon) {
+  if (pokemon.id < 900) {
+    return pokemon.id
+  } else return `pokeball`
 }
 
 function populateCardBack(pokemon) {
